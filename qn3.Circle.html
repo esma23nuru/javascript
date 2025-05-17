@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  function Circle(radius) {
+    this.radius = radius;
+
+    this.getArea = function () {
+      return Math.PI * this.radius * this.radius;
+    };
+
+    this.getPerimeter = function () {
+      return 2 * Math.PI * this.radius;
+    };
+  }
+
+  // Example usage:
+  const circ1 = new Circle(11);
+  console.log("Area:", circ1.getArea()); // → 380.132711084365
+
+  const circ2 = new Circle(4.44);
+  console.log("Perimeter:", circ2.getPerimeter()); // → 27.897342763877365
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sort Three Numbers</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #ddd;
+      padding: 20px;
+    }
+    .box {
+      background-color: #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #aaa;
+    }
+    input[type="text"] {
+      width: 80px;
+      padding: 5px;
+      margin: 5px;
+    }
+    button {
+      padding: 10px;
+      margin: 10px 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>Input Section</h2>
+    <p>Enter a number in each of the boxes below and then click one of the buttons below to either sort the numbers into ascending order, or descending order. The sorted numbers will be placed in the output section.</p>
+    <label>A</label>
+    <input type="text" id="num1">
+    <label>B</label>
+    <input type="text" id="num2">
+    <label>C</label>
+    <input type="text" id="num3">
+    <br><br>
+    <button onclick="sortNumbers('asc')">Sort in Ascending Order</button>
+    <button onclick="sortNumbers('desc')">Sort in Descending Order</button>
+  </div>
+
+  <div class="box">
+    <h2>Output Section</h2>
+    <p>Once you click on one of the buttons, the numbers in boxes A, B, and C will be sorted accordingly. The sorted numbers will then be placed in these boxes.</p>
+    <input type="text" id="out1" readonly>
+    <input type="text" id="out2" readonly>
+    <input type="text" id="out3" readonly>
+  </div>
+
+  <script>
+    function sortNumbers(order) {
+      // Get the input values
+      let a = parseFloat(document.getElementById("num1").value);
+      let b = parseFloat(document.getElementById("num2").value);
+      let c = parseFloat(document.getElementById("num3").value);
+
+      if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        alert("Please enter valid numbers in all boxes.");
+        return;
+      }
+
+      let nums = [a, b, c];
+
+      // Sort based on order
+      if (order === 'asc') {
+        nums.sort((x, y) => x - y);
+      } else {
+        nums.sort((x, y) => y - x);
+      }
+
+      // Output to result boxes
+      document.getElementById("out1").value = nums[0];
+      document.getElementById("out2").value = nums[1];
+      document.getElementById("out3").value = nums[2];
+    }
+  </script>
+
+</body>
+</html>

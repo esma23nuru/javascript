@@ -1,0 +1,24 @@
+<h3>1st Number: <input type="number" id="num1" value="12" /></h3>
+<h3>2nd Number: <input type="number" id="num2" value="10" /></h3>
+<button onclick="multiply()">Multiply</button>
+<button onclick="divide()">Divide</button>
+<h3>The Result Is:</h3>
+<p id="result"></p>
+
+<script>
+  function multiply() {
+    const n1 = parseFloat(document.getElementById("num1").value);
+    const n2 = parseFloat(document.getElementById("num2").value);
+    document.getElementById("result").innerText = n1 * n2;
+  }
+
+  function divide() {
+    const n1 = parseFloat(document.getElementById("num1").value);
+    const n2 = parseFloat(document.getElementById("num2").value);
+    if (n2 !== 0) {
+      document.getElementById("result").innerText = n1 / n2;
+    } else {
+      alert("Cannot divide by zero.");
+    }
+  }
+</script>

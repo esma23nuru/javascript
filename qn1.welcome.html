@@ -1,0 +1,15 @@
+<h3>What is your name?</h3>
+<input type="text" id="username" />
+<button onclick="showWelcome()">Submit</button>
+<p id="welcomeMsg"></p>
+
+<script>
+  function showWelcome() {
+    const name = document.getElementById("username").value.trim();
+    if (name.length > 3) {
+      document.getElementById("welcomeMsg").innerHTML = `Welcome to the site ${name}`;
+    } else {
+      alert("Please enter a name with more than 3 characters.");
+    }
+  }
+</script>
